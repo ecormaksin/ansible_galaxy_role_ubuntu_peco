@@ -1,0 +1,11 @@
+---
+# tasks file for ansible_galaxy_role_ubuntu_peco
+
+- name: "Peco | install"
+  become: yes
+  ignore_errors: "{{ ansible_check_mode }}"
+  apt:
+    pkg: 
+      - peco
+    state: present
+    update_cache: yes
